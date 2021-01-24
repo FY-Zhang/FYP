@@ -1,0 +1,76 @@
+.header {
+    background: url(../images/UL-dark.png) no-repeat center;
+    height: 300px;
+}
+
+.header h1 {
+    font-size: 90px;
+    color: aliceblue;
+    text-align: center;
+    padding-top: 120px;
+}
+
+@media (max-width: 800px) {
+    .header h1 {
+        font-size: 11vw;
+        color: aliceblue;
+        text-align: center;
+        padding-top: 125px;
+    }
+}
+
+.carousel-inner {
+    margin-top: 10px;
+}
+
+#img_1 {
+    background: url(../images/sample1.png) no-repeat center;
+    width: 98%;
+    height: 500px;
+    border-radius: 30px;
+    margin: auto;
+    right: 0;
+    left: 0;
+}
+#img_2 {
+    background: url(../images/sample2.png) no-repeat center;
+    width: 98%;
+    height: 500px;
+    border-radius: 30px;
+    margin: auto;
+    right: 0;
+    left: 0;
+}
+#img_3 {
+    background: url(../images/sample3.png) no-repeat center;
+    width: 98%;
+    height: 500px;
+    border-radius: 30px;
+    margin: auto;
+    right: 0;
+    left: 0;
+}
+
+.category {
+    width: 90%;
+    margin: auto;
+    right: 0;
+    left: 0;
+    margin-top: 30px;
+}
+
+.category h2 {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card {
+    height: 300px;
+}
+
+.card img {
+    width: 100%;
+    height: 75%;
+    object-fit: cover;
+}

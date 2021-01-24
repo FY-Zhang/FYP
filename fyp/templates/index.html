@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FYP</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!--移动设备友好-->
+    <link rel="stylesheet" href="static/css/HomePage.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/2.5.4/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <!--导航栏-->
+    <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top">
+      <a class="navbar-brand">FYP</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!--导航按钮-->
+        <ul class="navbar-nav mr-auto ml-md-4">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Articles</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Photos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Forum</a>
+          </li>
+        </ul>
+        <!--搜索-->
+        <form class="form-inline my-2">
+          <input class="form-control mr-2 col-6 col-md-8" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <!--主体-->
+    <div class="header">
+      <h1>UL Introduction</h1>
+    </div>
+
+    <!--轮播-->
+    <div id="roll" class="carousel slide" data-ride="carousel">
+      <!--指示符-->
+      <ul class="carousel-indicators">
+        <li data-target="#roll" data-slide-to="0" class="active"></li>
+        <li data-target="#roll" data-slide-to="1"></li>
+        <li data-target="#roll" data-slide-to="2"></li>
+      </ul>
+      <!--图片-->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <a href="#">
+            <div id="img_1"></div>
+            <div class="carousel-caption d-block">
+              <h4>Thomond Village</h4>
+              <p>This is the first article.</p>
+            </div>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="#">
+            <div id="img_2"></div>
+            <div class="carousel-caption d-block">
+              <h4>Cappavilla Village</h4>
+              <p>This is the second article.</p>
+            </div>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="#">
+            <div id="img_3"></div>
+            <div class="carousel-caption d-block">
+              <h4>Dromroe Village</h4>
+              <p>This is the third article.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!--左右切换按钮-->
+      <a class="carousel-control-prev" href="#roll" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#roll" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
+
+    <!--分类-->
+    <div class="category">
+      <h2>Category</h2>
+      <div class="card-deck">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/sample1.png' %}">
+          <div class="card-body">
+            <h5 class="card-title">Thomond</h5>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/sample2.png' %}">
+          <div class="card-body">
+            <h5 class="card-title">Cappavilla</h5>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/sample3.png' %}">
+          <div class="card-body">
+            <h5 class="card-title">Dromroe</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--页脚-->
+    
+  </body>
+</html>
