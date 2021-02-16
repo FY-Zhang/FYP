@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!--移动设备友好-->
     <link rel="stylesheet" href="static/css/HomePage.css">
     <link rel="stylesheet" href="static/css/Header.css">
+    <link rel="stylesheet" href="static/css/Articles.css">
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
     <script src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/popper.js/2.5.4/umd/popper.min.js"></script>
@@ -24,9 +25,6 @@
         <ul class="navbar-nav mr-auto ml-md-4">
           <li class="nav-item">
             <a class="nav-link" href="{% url 'index' %}">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Articles</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Photos</a>
@@ -94,28 +92,270 @@
         <span class="carousel-control-next-icon"></span>
       </a>
     </div>
-
-    <!--分类-->
-    <div class="category">
-      <h2>Category</h2>
-      <div class="card-deck">
-        <div class="card">
-          <img class="card-img-top" src="{% static 'images/sample1.png' %}">
-          <div class="card-body">
-            <h5 class="card-title">Thomond</h5>
-          </div>
+    <!--文章-->
+    <div class="container category mb-4">
+      <h2 id="category">Category</h2>
+      <div class="row">
+        <div class="col-sm-3 nav flex-column nav-pills mt-sm-4" id="article-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link active" id="category-1-tab" data-toggle="pill" href="#category-1" role="tab" aria-controls="category-1" aria-selected="true">Before You Arrive</a>
+            <a class="nav-link" id="category-2-tab" data-toggle="pill" href="#category-2" role="tab" aria-controls="category-2" aria-selected="false">After You Arrive</a>
+            <a class="nav-link" id="category-3-tab" data-toggle="pill" href="#category-3" role="tab" aria-controls="category-3" aria-selected="false">Life in Ireland</a>
+            <a class="nav-link" id="category-4-tab" data-toggle="pill" href="#category-4" role="tab" aria-controls="category-4" aria-selected="false">UL Campus</a>
         </div>
-        <div class="card">
-          <img class="card-img-top" src="{% static 'images/sample2.png' %}">
-          <div class="card-body">
-            <h5 class="card-title">Cappavilla</h5>
-          </div>
-        </div>
-        <div class="card">
-          <img class="card-img-top" src="{% static 'images/sample3.png' %}">
-          <div class="card-body">
-            <h5 class="card-title">Dromroe</h5>
-          </div>
+        <div class="col-sm-9 tab-content mt-4" id="article-content">
+            <div class="tab-pane fade show active" id="category-1" role="tabpanel" aria-labelledby="category-1-tab">
+                <div id="accordion-1">
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="card-link text-dark" data-toggle="collapse" href="#collapse-1-1">
+                                <h2>What you have to do</h2>
+                            </a>
+                        </div>
+                        <div id="collapse-1-1" class="collapse show" data-parent="#accordion-1">
+                            <div class="card-body">
+                                <p>
+                                    Please refer to the <a href="https://www.ul.ie/international/you-arrive">Before You Arrive</a> page of UL's official website, which has the latest requirements of the school.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="collapsed card-link text-dark" data-toggle="collapse" href="#collapse-1-2">
+                                <h2>Some suggestions about luggage</h2>
+                            </a>
+                        </div>
+                        <div id="collapse-1-2" class="collapse" data-parent="#accordion-1">
+                            <div class="card-body">
+                                <p>
+                                    When you are packing your luggage, do you think that you need to bring a lot of luggage to live in Ireland for a long time? In fact, it is not necessary.
+                                </p>
+                                <p>
+                                    <b>Clothes.</b> When I went to Ireland, I took a whole suitcase of clothes, but in the end they only increased the weight of my luggage. Irish clothes are not more expensive than Chinese clothes, so I recommend bringing a small number of clothes and buying clothes locally when you need. Besides, Ireland is not very hot in summer, you can wear the same kind of clothes in spring, summer and autumn, so it is unnecessary to buy a lot of clothes.
+                                </p>
+                                <p>
+                                    <b>Kitchenware.</b> Campus accommodation provides almost all the kitchenwares you use, so there is no need to worry about that. If you don’t want to buy them in Ireland, it is a good choice to bring a kitchen knife and a few pairs of chopsticks from China. If you like rice, you can bring a small rice cooker. Other kitchenwares are not needed to bring.
+                                </p>
+                                <p>
+                                    <b>Umbrella.</b> It is best to bring an umbrella when you come to Ireland. Compared to Shandong, Ireland rains more frequently, so you may always keep an umbrella in your bag. In addition, umbrellas in Ireland are much more expensive than in China, so it is better to bring an extra as a spare.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="category-2" role="tabpanel" aria-labelledby="category-2-tab">
+                <div id="accordion-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="card-link text-dark" data-toggle="collapse" href="#collapse-2-1">
+                                <h2>How to arrive at school</h2>
+                            </a>
+                        </div>
+                        <div id="collapse-2-1" class="collapse show" data-parent="#accordion-2">
+                            <div class="card-body">
+                                <p>
+                                    Generally, the plane will land at Dublin Airport. After walking out of Dublin Airport, there will be a bus ticket office next to it. Find where you want to go through Google Maps in advance, and then tell the conductor.
+                                </p>
+                                <img src="{% static 'images/bus-ticket-office.jpg' %}" class="img-fluid">
+                                <p>
+                                    Regarding the bus route, you can take the route 41 bus from Dublin Airport to the <b>O'Connell Bridge</b>, and then take the route 300 directly to UL.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="collapsed card-link text-dark" data-toggle="collapse" href="#collapse-2-2">
+                                <h2>How to arrive at campus accommodation</h2>
+                            </a>
+                        </div>
+                        <div id="collapse-2-2" class="collapse" data-parent="#accordion-2">
+                            <div class="card-body">
+                                <p>
+                                    There are five villages for undergraduates on campus, namely Thomond Village, Cappavilla Village, Dromroe Village, Plassey Village and Kilmurry Village. There is a sign with the name written in each Village, so it is easy to find. After arriving at your village, check in at <b>Village Reception</b>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="collapsed card-link text-dark" data-toggle="collapse" href="#collapse-2-3">
+                                <h2>What you have to do</h2>
+                            </a>
+                        </div>
+                        <div id="collapse-2-3" class="collapse" data-parent="#accordion-2">
+                            <div class="card-body">
+                                <p>
+                                    Please refer to the <a href="https://www.ul.ie/international/after-you-arrive">After You Arrive</a> page of UL's official website, which has some things you need to do after you arrive at school.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="category-3" role="tabpanel" aria-labelledby="category-3-tab">
+                <div id="accordion-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="card-link text-dark" data-toggle="collapse" href="#collapse-3-1">
+                                <h2>Travel in Ireland</h2>
+                            </a>
+                        </div>
+                        <div id="collapse-3-1" class="collapse show" data-parent="#accordion-3">
+                            <div class="card-body">
+                                <p>
+                                    There are two useful websites:
+                                </p>
+                                <ul>
+                                    <li>
+                                        Travelling around Ireland: <a href="https://www.discoverireland.ie/">https://www.discoverireland.ie/</a>
+                                    </li>
+                                    <li>
+                                        Guide of Limerick: <a href="https://www.limerick.ie/">https://www.limerick.ie/</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="collapsed card-link text-dark" data-toggle="collapse" href="#collapse-3-2">
+                                <h2>Shopping in Limerick</h2>
+                            </a>
+                        </div>
+                        <div id="collapse-3-2" class="collapse" data-parent="#accordion-3">
+                            <div class="card-body">
+                                <p>
+                                    There are some supermarkets I often visit:
+                                </p>
+                                <ul>
+                                    <li>
+                                        <b>Spar:</b> There are two Spar near the school, one on the campus and one at the entrance of the campus. The goods in Spar are few and expensive, so it suitable for buying some snacks and urgent items.
+                                    </li>
+                                    <li>
+                                        <b>Lidl:</b> Lidl is about 3 kilometres away from the school. It's not big, but the food is full and the price is cheap. I recommend coming here every week to buy vegetables and meat.
+                                    </li>
+                                    <li>
+                                        <b>ALDI:</b> ALDI is about 2 kilometres away from the school. It is similar to Lidl. You can choose one of them to buy food for every week.
+                                    </li>
+                                    <li>
+                                        <b>Tesco:</b> Tesco is in Limerick city centre, which is a large supermarket with many types of goods, but the price is more expensive than Lidl and ALDI. It can also be purchased online and delivered to your accommodation, which is very convenient.
+                                    </li>
+                                    <li>
+                                        <b>SuperValu:</b> SuperValu is near the Lidl, which also provides delivery service, but it is more expensive than Tesco. If Tesco is booked full, you can choose SuperValu.
+                                    </li>
+                                    <li>
+                                        <b>Carnival Asia Supermarket:</b> It is a larger Asian supermarket in Limerick. Because the owner is Chinese, most of foods are from China. You can add the owners' WeChat when you go there first, and then just tell them what you need, they will deliver to your accommodation free.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="collapsed card-link text-dark" data-toggle="collapse" href="#collapse-3-3">
+                                <h2>Go to Limerick city centre</h2>
+                            </a>
+                        </div>
+                        <div id="collapse-3-3" class="collapse" data-parent="#accordion-3">
+                            <div class="card-body">
+                                <p>
+                                    No matter which student village you live in, it is always easy to take the bus to the city centre, usually take 304 or 307 route. For convenience and to save money, you can apply for Leap Card at Student Life, then you do not need to prepare coins every time you take the bus. Because the city centre is only 5 kilometres away from the school, cycling or even walking are also good choices
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="collapsed card-link text-dark" data-toggle="collapse" href="#collapse-3-4">
+                                <h2>Some questions maybe you have</h2>
+                            </a>
+                        </div>
+                        <div id="collapse-3-4" class="collapse" data-parent="#accordion-3">
+                            <div class="card-body">
+                                <ol>
+                                    <li>
+                                        <b>Are there canteens in UL?</b>
+                                        <br>
+                                        UL does not have a canteen like SDUT, but there are many restaurants and bars on campus.
+                                    </li>
+                                    <li>
+                                        <b>Does the dormitory have a washing machine?</b>
+                                        <br>
+                                        Except for the 2 bedroom apartment, there are no washing machines in the other dormitories, but there are public washing machines in the village, usually near Reception.
+                                    </li>
+                                    <li>
+                                        <b>Do I need to pay utility bills?</b>
+                                        <br>
+                                        No.
+                                    </li>
+                                    <li>
+                                        <b>Can I drink the tap water directly?</b>
+                                        <br>
+                                        Yes. You can drink the tap water in the kitchen directly. In addition, there is also a kettle in the dormitory.
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="category-4" role="tabpanel" aria-labelledby="category-4-tab">
+                <div id="accordion-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="card-link text-dark" data-toggle="collapse" href="#collapse-4-1">
+                                <h2>Campus Accommodation</h2>
+                            </a>
+                        </div>
+                        <div id="collapse-4-1" class="collapse show" data-parent="#accordion-4">
+                            <div class="card-body">
+                                <ol>
+                                    <li>
+                                        <b>Cappavilla Village</b>
+                                        <p>
+                                          Cappavilla Village is located on the northeast side of the campus with a beautiful pasture behind it. Its accommodation is divided into 2/4/6 rooms, each bedroom with bathroom.
+                                        </p>
+                                        <img src="{% static 'images/Cappavilla.jpg' %}" class="img-fluid">
+                                    </li>
+                                    <li>
+                                        <b>Thomond Village</b>
+                                        <p>
+                                          Thomond Village is located on the northwest side of the campus, it is almost the same as Cappavilla.
+                                        </p>
+                                        <img src="{% static 'images/Thomond.jpg' %}" class="img-fluid">
+                                    </li>
+                                    <li>
+                                        <b>Dromroe Village</b>
+                                        <p>
+                                          Dromroe Village is the most expensive apartment, it is divided into 2/6 rooms. Compared to Cappavilla and Thomond, the room in Dromroe is larger, closer to school buildings, and there is a pizzeria in the village.
+                                        </p>
+                                        <img src="{% static 'images/Dromroe.jpg' %}" class="img-fluid">
+                                    </li>
+                                    <li>
+                                        <b>Plassey Village</b>
+                                        <p>
+                                          Plassey Village is located off-campus, on the south side of the campus, farthest from school buildings. It is divided into 4/8 rooms, and there is only one hand basin in the room, the bathroom is shared by the dormitory.
+                                        </p>
+                                        <img src="{% static 'images/Plassey.jpg' %}" class="img-fluid">
+                                    </li>
+                                    <li>
+                                        <b>Kilmurry Village</b>
+                                        <p>
+                                          Kilmurry Village is located on the east side of the school, it is divided into 6/8 people. Like Plassey, Kilmurry's bedroom does not have an ensuite bathroom.
+                                        </p>
+                                        <img src="{% static 'images/Kilmurry.jpg' %}" class="img-fluid">
+                                    </li>
+                                </ol>
+                                <p>
+                                    For village information detail, please click <a href="https://studentliving.ul.ie/index.jsp?p=101&n=117">here</a> to view the UL's official website.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
       </div>
     </div>
