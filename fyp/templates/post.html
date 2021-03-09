@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!--移动设备友好-->
+        <link rel="stylesheet" href="static/css/Header.css">
+        <link rel="stylesheet" href="static/css/Post.css">
+        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+        <script src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/popper.js/2.5.4/umd/popper.min.js"></script>
+        <script src="https://cdn.staticfile.org/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <!--导航栏-->
+        <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top">
+            <a class="navbar-brand">FYP</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                <!--导航按钮-->
+                <ul class="navbar-nav mr-auto ml-md-4 my-2">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'photos' %}">Photos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'forum' %}">Forum</a>
+                    </li>
+                </ul>
+                <!--登录/登出-->
+                <ul class="navbar-nav navbar-right mr-4 ml-md-4">
+                    <li class="nav-item">
+                        <!--根据Cookie判断是否登录，未登录就显示Login，登录就显示头像-->
+                        {% if cookie != '' %}
+                        <a class="nav-link" href="{% url 'logout' %}" >logout</a>
+                        {% else %}
+                        <a class="nav-link" href="{% url 'login' %}" >Login</a>
+                        {% endif %}
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!--主体-->
+        <div class="header">
+            <h1>Post</h1>
+        </div>
+        <div class="container">
+            <!--帖子主体-->
+            <h2 class="title">{{post.post_title}}</h2>
+            <p class="info"><b>User:</b> {{user.user_name}}&nbsp;&nbsp;&nbsp;<b>Topic:</b> {{post.post_topic}}&nbsp;&nbsp;&nbsp;<b>Time:</b> {{post.post_time}}</p>
+            <p class="content">{{post.post_content}}</p>
+            <h4>Comment</h4>
+            <!--根据Cookie判断是否登录，登录就显示发表评论-->
+            {% if cookie != '' %}
+            <form class="comment" action="" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <textarea class="form-control" name="comment" id="postComment" rows="5"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary float-right comment-btn">Submit</button>
+            </form>
+            {% endif %}
+            <!--显示评论-->
+            <div class="comments">
+                {% for comments in post_comments %}
+                <div class="media comment_list">
+                    <div class="media-body">
+                        {% for user in users %}
+                            {% if user.user_email == comments.user_email %}
+                                <h5>{{user.user_name}}</h5>
+                                <p>{{comments.comment_content}}</p>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>

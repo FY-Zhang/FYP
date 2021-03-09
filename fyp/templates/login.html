@@ -25,17 +25,21 @@
                         <a class="nav-link" href="{% url 'index' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Photos</a>
+                        <a class="nav-link" href="{% url 'photos' %}">Photos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'forum' %}">Forum</a>
                     </li>
                 </ul>
                 <!--登录/登出-->
-               <ul class="navbar-nav navbar-right mr-4 ml-md-4">
+                <ul class="navbar-nav navbar-right mr-4 ml-md-4">
                     <li class="nav-item">
                         <!--根据cookie判断是否登录，未登录就显示login，登录就显示头像-->
+                        {% if cookie != '' %}
+                        <a class="nav-link" href="{% url 'logout' %}" >logout</a>
+                        {% else %}
                         <a class="nav-link" href="{% url 'login' %}" >Login</a>
+                        {% endif %}
                     </li>
                 </ul>
             </div>
@@ -47,21 +51,22 @@
         </div>
 
         <div class="container">
-            <form action="/login-post/" method="post" class="mt-4">
+            <form action="" method="post" class="mt-4">
                 {% csrf_token %}
                 <div class="form-group">
                   <label for="inputEmail">Email address</label>
-                  <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                  <input type="email" name="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
                 </div>
                 <div class="form-group">
                   <label for="inputPassword">Password</label>
-                  <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                  <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password">
                 </div>
                 <button type="submit" class="btn btn-primary">Login</button>
                 <a href="{% url 'register' %}">
                     <button type="button" class="btn btn-link">Register</button>
                 </a>
-              </form>
+            </form>
+            <p style="color: red;text-align: center">{{error_msg}}</p>
         </div>
 
     </body>

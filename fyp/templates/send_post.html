@@ -26,7 +26,7 @@
                         <a class="nav-link" href="{% url 'index' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Photos</a>
+                        <a class="nav-link" href="{% url 'photos' %}">Photos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'forum' %}">Forum</a>
@@ -35,8 +35,12 @@
                 <!--登录/登出-->
                <ul class="navbar-nav navbar-right mr-4 ml-md-4">
                     <li class="nav-item">
-                        <!--根据cookie判断是否登录，未登录就显示login，登录就显示头像-->
+                        <!--根据Cookie判断是否登录，未登录就显示Login，登录就显示头像-->
+                        {% if cookie != '' %}
+                        <a class="nav-link" href="{% url 'logout' %}" >logout</a>
+                        {% else %}
                         <a class="nav-link" href="{% url 'login' %}" >Login</a>
+                        {% endif %}
                     </li>
                 </ul>
             </div>
@@ -47,16 +51,25 @@
             <h1>New Post</h1>
         </div>
         <div class="container">
-            <form class="mt-4">
+            <form class="mt-4" action="" method="post">
+                {% csrf_token %}
                 <div class="form-group">
                   <label for="postTitle">Title</label>
-                  <input type="text" class="form-control" id="postTitle">
+                  <input type="text" name="title" class="form-control" id="postTitle">
+                </div>
+                <div class="form-group">
+                    <label for="postTopic">Topic</label>
+                    <select class="form-control" name="topic" id="postTopic">
+                        <option>University Life</option>
+                        <option>Limerick</option>
+                        <option>Ireland</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="postContent">Content</label>
-                    <textarea class="form-control" id="postContent" rows="5"></textarea>
+                    <textarea class="form-control" name="content" id="postContent" rows="5"></textarea>
                 </div>
-                <button type="button" class="btn btn-primary float-right mt-2">Submit</button>
+                <button type="submit" class="btn btn-primary float-right mt-2">Submit</button>
             </form>
         </div>
     </body>

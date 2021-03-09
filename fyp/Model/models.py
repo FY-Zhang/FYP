@@ -13,10 +13,11 @@ class User_Collection(models.Model):
     collection_time = models.DateTimeField(auto_now_add=True) #收藏时间
 
 class Post(models.Model):
-    post_id = models.IntegerField(default=0)
     post_title = models.CharField(max_length=200)
+    post_topic = models.CharField(max_length=50)
     post_content = models.TextField()
     post_time = models.DateTimeField(auto_now_add=True) #发帖时间
+    user_email = models.CharField(max_length=50)
     like_num = models.IntegerField(default=0) #获赞数量
     comment_num = models.IntegerField(default=0) #评论数量
     collection_num = models.IntegerField(default=0) #收藏数量
@@ -24,5 +25,4 @@ class Post(models.Model):
 class Post_Comment(models.Model):
     post_id = models.IntegerField(default=0)
     user_email = models.CharField(max_length=50)
-    comment_id = models.IntegerField(default=0) #评论的楼层
     comment_content = models.TextField()

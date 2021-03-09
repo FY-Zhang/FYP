@@ -1,0 +1,290 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>FYP</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--移动设备友好-->
+  <link rel="stylesheet" href="static/css/Header.css">
+  <link rel="stylesheet" href="static/css/Photos.css">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+  <script src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/popper.js/2.5.4/umd/popper.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+</head>
+
+<body>
+  <!--导航栏-->
+  <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top">
+    <a class="navbar-brand">FYP</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar">
+      <!--导航按钮-->
+      <ul class="navbar-nav mr-auto ml-md-4">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'index' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'photos' %}">Photos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'forum' %}">Forum</a>
+        </li>
+      </ul>
+      <!--搜索-->
+      <form class="form-inline my-2">
+        <input class="form-control mr-2 col-6 col-md-8" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <!--主体-->
+  <div class="header">
+    <h1>Photos</h1>
+  </div>
+  <div class="mt-2 ml-4 mr-4">
+    <div id="accordion-1">
+      <div class="card">
+        <div class="card-header">
+          <a class="card-link text-dark" data-toggle="collapse" href="#collapse-1-1">
+            <h2 class="category">University of Limerick</h2>
+          </a>
+        </div>
+        <div id="collapse-1-1" class="collapse show" data-parent="#accordion-1">
+          <div class="card-body">
+            <div class="row masonry">
+              <div class="col-lg-3 col-md-6 mt-2 item">
+                <img src="{% static 'images/Campus-11.jpg' %}" class="img-fluid">
+                <p class="remark">Campus</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mt-2 item">
+                <img src="{% static 'images/Campus-12.jpg' %}" class="img-fluid">
+                <p class="remark">Campus</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mt-2 item">
+                <img src="{% static 'images/Campus-13.jpg' %}" class="img-fluid">
+                <p class="remark">Playground</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mt-2 item">
+                <img src="{% static 'images/Campus-14.jpg' %}" class="img-fluid">
+                <p class="remark">Campus</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mt-2 item">
+                <img src="{% static 'images/Campus-5.jpg' %}" class="img-fluid">
+                <p class="remark">Campus</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mt-2 item">
+                <img src="{% static 'images/Campus-6.jpg' %}" class="img-fluid">
+                <p class="remark">Campus</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mt-2 item">
+                <img src="{% static 'images/Campus-7.jpg' %}" class="img-fluid">
+                <p class="remark">Playground</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mt-2 item">
+                <img src="{% static 'images/Campus-8.jpg' %}" class="img-fluid">
+                <p class="remark">Sports Centre</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mt-2 item">
+                <img src="{% static 'images/Campus-9.jpg' %}" class="img-fluid">
+                <p class="remark">Foundation Building</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mt-2 item">
+                <img src="{% static 'images/Campus-10.jpg' %}" class="img-fluid">
+                <p class="remark">Bridge</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mt-2 item">
+                <img src="{% static 'images/Campus-15.jpg' %}" class="img-fluid">
+                <p class="remark">Sports Centre</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mt-2 item">
+                <img src="{% static 'images/Campus-16.jpg' %}" class="img-fluid">
+                <p class="remark">Sports Centre</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mt-2 item">
+                <img src="{% static 'images/Campus-17.jpg' %}" class="img-fluid">
+                <p class="remark">Cappavilla Village</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mt-2 item">
+                <img src="{% static 'images/Campus-18.jpg' %}" class="img-fluid">
+                <p class="remark">Campus</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mt-2 item">
+                <img src="{% static 'images/Campus-19.jpg' %}" class="img-fluid">
+                <p class="remark">Playground</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mt-2 item">
+                <img src="{% static 'images/Campus-20.jpg' %}" class="img-fluid">
+                <p class="remark">Campus</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mt-2 item">
+                <img src="{% static 'images/Campus-21.jpg' %}" class="img-fluid">
+                <p class="remark">Campus</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mt-2 item">
+                <img src="{% static 'images/Campus-22.jpg' %}" class="img-fluid">
+                <p class="remark">Campus</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mt-2 item">
+                <img src="{% static 'images/Campus-23.jpg' %}" class="img-fluid">
+                <p class="remark">Bus Stop</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mt-2 item">
+                <img src="{% static 'images/Cappavilla-1.jpg' %}" class="img-fluid">
+                <p class="remark">Cappavilla Village</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mt-2 item">
+                <img src="{% static 'images/Cappavilla-2.jpg' %}" class="img-fluid">
+                <p class="remark">Cappavilla Village</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mt-2 item">
+                <img src="{% static 'images/Cappavilla-3.jpg' %}" class="img-fluid">
+                <p class="remark">Cappavilla Village</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mt-2 item">
+                <img src="{% static 'images/Cappavilla-4.jpg' %}" class="img-fluid">
+                <p class="remark">Cappavilla Village</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mt-2 item">
+                <img src="{% static 'images/Cappavilla-5.jpg' %}" class="img-fluid">
+                <p class="remark">Cappavilla Village</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mt-2 item">
+                <img src="{% static 'images/Dromroe-1.jpg' %}" class="img-fluid">
+                <p class="remark">Dromroe Village</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mt-2 item">
+                <img src="{% static 'images/Dromroe-2.jpg' %}" class="img-fluid">
+                <p class="remark">Dromroe Village</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mt-2 item">
+                <img src="{% static 'images/Thomond-1.jpg' %}" class="img-fluid">
+                <p class="remark">Thomond Village</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mt-2 item">
+                <img src="{% static 'images/Kilmurry-1.jpg' %}" class="img-fluid">
+                <p class="remark">Kilmurry Village</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mt-2 item">
+                <img src="{% static 'images/Kilmurry-2.jpg' %}" class="img-fluid">
+                <p class="remark">Kilmurry Village</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mt-2 item">
+                <img src="{% static 'images/Kilmurry-3.jpg' %}" class="img-fluid">
+                <p class="remark">Kilmurry Village</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <a class="collapsed card-link text-dark" data-toggle="collapse" href="#collapse-1-2">
+              <h2 class="category">Limerick City</h2>
+            </a>
+          </div>
+          <div id="collapse-1-2" class="collapse" data-parent="#accordion-1">
+            <div class="card-body">
+              <div class="row masonry">
+                <div class="col-lg-3 col-md-6 mt-2 item">
+                  <img src="{% static 'images/Limerick-1.jpg' %}" class="img-fluid">
+                  <p class="remark">City Centre</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-2 item">
+                  <img src="{% static 'images/Limerick-2.jpg' %}" class="img-fluid">
+                  <p class="remark">City Centre</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-2 item">
+                  <img src="{% static 'images/Limerick-3.jpg' %}" class="img-fluid">
+                  <p class="remark">City Centre</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-2 item">
+                  <img src="{% static 'images/Limerick-4.jpg' %}" class="img-fluid">
+                  <p class="remark">City Centre</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-2 item">
+                  <img src="{% static 'images/Limerick-5.jpg' %}" class="img-fluid">
+                  <p class="remark">City Centre</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-2 item">
+                  <img src="{% static 'images/Limerick-6.jpg' %}" class="img-fluid">
+                  <p class="remark">City Centre</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-2 item">
+                  <img src="{% static 'images/Limerick-7.jpg' %}" class="img-fluid">
+                  <p class="remark">City Centre</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-2 item">
+                  <img src="{% static 'images/Limerick-8.jpg' %}" class="img-fluid">
+                  <p class="remark">City Centre</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-2 item">
+                  <img src="{% static 'images/Limerick-9.jpg' %}" class="img-fluid">
+                  <p class="remark">City Centre</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-2 item">
+                  <img src="{% static 'images/Limerick-10.jpg' %}" class="img-fluid">
+                  <p class="remark">St. Mary's Cathedral</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-2 item">
+                  <img src="{% static 'images/Limerick-11.jpg' %}" class="img-fluid">
+                  <p class="remark">City Centre</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-2 item">
+                  <img src="{% static 'images/Limerick-12.jpg' %}" class="img-fluid">
+                  <p class="remark">Lidl</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-2 item">
+                  <img src="{% static 'images/Limerick-13.jpg' %}" class="img-fluid">
+                  <p class="remark">ALDI</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-2 item">
+                  <img src="{% static 'images/Limerick-15.jpg' %}" class="img-fluid">
+                  <p class="remark">King John's Castle</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-2 item">
+                  <img src="{% static 'images/Limerick-16.jpg' %}" class="img-fluid">
+                  <p class="remark">City Centre</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-2 item">
+                  <img src="{% static 'images/Limerick-17.jpg' %}" class="img-fluid">
+                  <p class="remark">City Centre</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-2 item">
+                  <img src="{% static 'images/Limerick-18.jpg' %}" class="img-fluid">
+                  <p class="remark">City Centre</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-2 item">
+                  <img src="{% static 'images/Limerick-19.jpg' %}" class="img-fluid">
+                  <p class="remark">City Centre</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-2 item">
+                  <img src="{% static 'images/Limerick-20.jpg' %}" class="img-fluid">
+                  <p class="remark">City Centre</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-2 item">
+                  <img src="{% static 'images/Limerick-21.jpg' %}" class="img-fluid">
+                  <p class="remark">City Centre</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-2 item">
+                  <img src="{% static 'images/Limerick-22.jpg' %}" class="img-fluid">
+                  <p class="remark">City Centre</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+          $('.masonry').masonry({
+            itemSelector: '.item',
+          });
+        </script>
+</body>
+
+</html>

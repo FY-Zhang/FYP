@@ -3,9 +3,13 @@
 }
 
 #article-content p {
-    font-size: 1.2em;
+    font-size: 20px;
 }
 
 #article-content li {
-    font-size: 1.2em;
+    font-size: 20px;
+}
+
+.hidden-after {
+    display:none;
 }

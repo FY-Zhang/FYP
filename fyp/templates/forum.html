@@ -26,7 +26,7 @@
                         <a class="nav-link" href="{% url 'index' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Photos</a>
+                        <a class="nav-link" href="{% url 'photos' %}">Photos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'forum' %}">Forum</a>
@@ -35,8 +35,12 @@
                 <!--登录/登出-->
                <ul class="navbar-nav navbar-right mr-4 ml-md-4">
                     <li class="nav-item">
-                        <!--根据cookie判断是否登录，未登录就显示login，登录就显示头像-->
+                        <!--根据Cookie判断是否登录，未登录就显示Login，登录就显示头像-->
+                        {% if cookie != '' %}
+                        <a class="nav-link" href="{% url 'logout' %}" >logout</a>
+                        {% else %}
                         <a class="nav-link" href="{% url 'login' %}" >Login</a>
+                        {% endif %}
                     </li>
                 </ul>
             </div>
@@ -49,9 +53,28 @@
 
         <div class="container">
             <!--发帖-->
+            {% if cookie != '' %}
             <a href="{% url 'send_post' %}">
                 <button type="button" class="btn btn-outline-primary float-right mt-2">Post</button>
             </a>
+            {% else %}
+            <a href="{% url 'login' %}">
+                <button type="button" class="btn btn-outline-primary float-right mt-2">Post</button>
+            </a>
+            {% endif %}
+
+            <!--看帖-->
+            <div class="posts mt-4">
+                {% for post in posts %}
+                <div class="media">
+                    <div class="media-body">
+                        <a href="{% url 'post' %}?id={{post.id}}"><h4>{{post.post_title}}</h4></a>
+                        <p>{{post.post_content}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+                
         </div>
 
     </body>

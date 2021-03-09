@@ -12,6 +12,18 @@
     <script src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/popper.js/2.5.4/umd/popper.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <style>
+        @media (max-width: 577px) {
+            .hidden-after {
+                display:none;
+            }
+        }
+        @media (min-width: 577px) {
+            .hidden-before {
+                display:none;
+            }
+        }
+    </style>
   </head>
   <body>
     <!--导航栏-->
@@ -27,7 +39,7 @@
             <a class="nav-link" href="{% url 'index' %}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Photos</a>
+            <a class="nav-link" href="{% url 'photos' %}">Photos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'forum' %}">Forum</a>
@@ -101,20 +113,28 @@
             <a class="nav-link" id="category-2-tab" data-toggle="pill" href="#category-2" role="tab" aria-controls="category-2" aria-selected="false">After You Arrive</a>
             <a class="nav-link" id="category-3-tab" data-toggle="pill" href="#category-3" role="tab" aria-controls="category-3" aria-selected="false">Life in Ireland</a>
             <a class="nav-link" id="category-4-tab" data-toggle="pill" href="#category-4" role="tab" aria-controls="category-4" aria-selected="false">UL Campus</a>
+            <br>
+            <br>
+            <a href="https://www.ul.ie/international/sites/default/files/user_media/uploads/Campus_Map.pdf" class="btn btn-outline-success hidden-after" target="_blank">UL Campus Map</a>
+            <a href="https://www.ul.ie/international/sites/default/files/user_media/uploads/Top%20Tips%20for%20International%20Students.pdf" class="btn btn-outline-success mt-2 hidden-after" target="_blank">Top Tips for International Students</a>
+            <a href="https://www.ul.ie/international/sites/default/files/user_media/uploads/itd_student_quick_start_guide.pdf" class="btn btn-outline-success mt-2 hidden-after" target="_blank">ITD Student Guide</a>
         </div>
-        <div class="col-sm-9 tab-content mt-4" id="article-content">
+        <div class="col-sm-9 tab-content mt-sm-4" id="article-content">
             <div class="tab-pane fade show active" id="category-1" role="tabpanel" aria-labelledby="category-1-tab">
                 <div id="accordion-1">
                     <div class="card">
                         <div class="card-header">
                             <a class="card-link text-dark" data-toggle="collapse" href="#collapse-1-1">
-                                <h2>What you have to do</h2>
+                                <h2>Pay tutorial fees</h2>
                             </a>
                         </div>
                         <div id="collapse-1-1" class="collapse show" data-parent="#accordion-1">
                             <div class="card-body">
                                 <p>
-                                    Please refer to the <a href="https://www.ul.ie/international/you-arrive">Before You Arrive</a> page of UL's official website, which has the latest requirements of the school.
+                                    According to UL regulations, international freshmen must pay a minimum of 50% of the tuition fee to receive a visa support letter. Because Chinese people must have a visa to enter Ireland, students need to pay 50% of the tuition fee in advance and apply for a visa after getting the visa support letter.
+                                </p>
+                                <p>
+                                    You can pay for tuition fees online <a href="https://ul.studentfees.ie/studentregistration.aspx">here</a>, which is the official collecting agent for the University of Limerick. 
                                 </p>
                             </div>
                         </div>
@@ -122,10 +142,38 @@
                     <div class="card">
                         <div class="card-header">
                             <a class="collapsed card-link text-dark" data-toggle="collapse" href="#collapse-1-2">
-                                <h2>Some suggestions about luggage</h2>
+                                <h2>Book campus accommodation</h2>
                             </a>
                         </div>
                         <div id="collapse-1-2" class="collapse" data-parent="#accordion-1">
+                            <div class="card-body">
+                                <p>
+                                    If you plan to live in an on-campus accommodation, you need to make a reservation from the school’s <a href="https://studentliving.ul.ie/">accommodation website</a> before coming to Ireland. The accommodation application system will be opened in March every year. It is worth noting that, applications for new incoming first years are not on a first come first serve basis, so you have enough time to consider the apartment you really want to live in and submit the application before the due date of the application.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="collapsed card-link text-dark" data-toggle="collapse" href="#collapse-1-3">
+                                <h2>Organise medical insurance</h2>
+                            </a>
+                        </div>
+                        <div id="collapse-1-3" class="collapse" data-parent="#accordion-1">
+                            <div class="card-body">
+                                <p>
+                                    Living in Ireland requires private medical insurance. There are a number of private medical insurance companies in Ireland. UL’s official website recommends <a href="https://www.odon.ie/">O’Driscoll O’Neill</a>, and you can pay online <a href="https://ul.studentfees.ie/studentregistration.aspx">here</a>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="collapsed card-link text-dark" data-toggle="collapse" href="#collapse-1-4">
+                                <h2>Some suggestions about luggage</h2>
+                            </a>
+                        </div>
+                        <div id="collapse-1-4" class="collapse" data-parent="#accordion-1">
                             <div class="card-body">
                                 <p>
                                     When you are packing your luggage, do you think that you need to bring a lot of luggage to live in Ireland for a long time? In fact, it is not necessary.
@@ -134,7 +182,7 @@
                                     <b>Clothes.</b> When I went to Ireland, I took a whole suitcase of clothes, but in the end they only increased the weight of my luggage. Irish clothes are not more expensive than Chinese clothes, so I recommend bringing a small number of clothes and buying clothes locally when you need. Besides, Ireland is not very hot in summer, you can wear the same kind of clothes in spring, summer and autumn, so it is unnecessary to buy a lot of clothes.
                                 </p>
                                 <p>
-                                    <b>Kitchenware.</b> Campus accommodation provides almost all the kitchenwares you use, so there is no need to worry about that. If you don’t want to buy them in Ireland, it is a good choice to bring a kitchen knife and a few pairs of chopsticks from China. If you like rice, you can bring a small rice cooker. Other kitchenwares are not needed to bring.
+                                    <b>Kitchenware.</b> Campus accommodation provides almost all the kitchenwares you use, so there is no need to worry about that. <a href="https://www.argos.ie/">Argos</a> is a large general merchandise retailer, and there are three in Limerick, you can buy some kitchenware you need from there, such as the knife, rice cooker, etc. Of course, if you don’t want to go shopping in the city centre as soon as you arrive in Ireland, you can bring a kitchen knife and some pairs of chopsticks from China, because they are essential for cooking and eating, and not heavy.
                                 </p>
                                 <p>
                                     <b>Umbrella.</b> It is best to bring an umbrella when you come to Ireland. Compared to Shandong, Ireland rains more frequently, so you may always keep an umbrella in your bag. In addition, umbrellas in Ireland are much more expensive than in China, so it is better to bring an extra as a spare.
@@ -155,11 +203,20 @@
                         <div id="collapse-2-1" class="collapse show" data-parent="#accordion-2">
                             <div class="card-body">
                                 <p>
-                                    Generally, the plane will land at Dublin Airport. After walking out of Dublin Airport, there will be a bus ticket office next to it. Find where you want to go through Google Maps in advance, and then tell the conductor.
+                                    Generally, the plane will land at Dublin Airport. After walking out of Dublin Airport, there will be a bus ticket office next to it. Find where you want to go through Google Maps in advance, and then tell the conductors.
                                 </p>
                                 <img src="{% static 'images/bus-ticket-office.jpg' %}" class="img-fluid">
                                 <p>
-                                    Regarding the bus route, you can take the route 41 bus from Dublin Airport to the <b>O'Connell Bridge</b>, and then take the route 300 directly to UL.
+                                    Regarding the way to Limerick, there are three bus companies which can travel from Dublin to Limerick, namely <a href="https://www.buseireann.ie/">Bus Eireann</a>, <a href="https://www.dublincoach.ie/">Dublin Coach</a> and <a href="https://www.eireagle.com/">Eir Eagle</a>. The bus runs for about 3 hours, and all of them have free WiFi.
+                                </p>
+                                <p>
+                                    First is <b>Bus Eireann</b>. You can take X12 bus from Dublin Ariport directly to UL.
+                                </p>
+                                <p>
+                                    The second is <b>Dublin Coach</b>. You can take the bus from the airport to the Burgh Quay bus stop, then take the 300 bus, which can directly to UL, too.
+                                </p>
+                                <p>
+                                    The third is <b>Eir Eagle</b>. The bus of this company depart from Dublin Airport, but can only reach Limerick city centre. It will stop at Arthurs Quay bus stop in Limerick, you can take a taxi or take bus 391 to UL.
                                 </p>
                             </div>
                         </div>
@@ -175,19 +232,33 @@
                                 <p>
                                     There are five villages for undergraduates on campus, namely Thomond Village, Cappavilla Village, Dromroe Village, Plassey Village and Kilmurry Village. There is a sign with the name written in each Village, so it is easy to find. After arriving at your village, check in at <b>Village Reception</b>.
                                 </p>
+                                <p>
+                                    The picture below is the campus map, I will point out the locations of the five student villages.
+                                </p>
+                                <ul>
+                                    <li>Cappavilla: 38</li>
+                                    <li>Thomond: 39</li>
+                                    <li>Dromroe: 26</li>
+                                    <li>Plassey: 4</li>
+                                    <li>Kilmurry: 24</li>
+                                </ul>
+                                <p>
+                                    If you take the bus to UL, it will stop at the Students Centre, which is 16 on the map.
+                                </p>
+                                <img src="{% static 'images/campus-map.png' %}" class="img-fluid">
                             </div>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-header">
                             <a class="collapsed card-link text-dark" data-toggle="collapse" href="#collapse-2-3">
-                                <h2>What you have to do</h2>
+                                <h2>How to connect to WiFi</h2>
                             </a>
                         </div>
                         <div id="collapse-2-3" class="collapse" data-parent="#accordion-2">
                             <div class="card-body">
                                 <p>
-                                    Please refer to the <a href="https://www.ul.ie/international/after-you-arrive">After You Arrive</a> page of UL's official website, which has some things you need to do after you arrive at school.
+                                    There is WiFi available throughout UL campus. When you connect to WiFi for the first time, you need to connect to setup_eduroam first, and then follow the prompts. After everything is ready, link the eduroam network. Click <a href="https://ulsites.ul.ie/itd/node/115031">here</a> to see how to connect to WiFi.
                                 </p>
                             </div>
                         </div>
@@ -231,22 +302,36 @@
                                 </p>
                                 <ul>
                                     <li>
-                                        <b>Spar:</b> There are two Spar near the school, one on the campus and one at the entrance of the campus. The goods in Spar are few and expensive, so it suitable for buying some snacks and urgent items.
+                                        <b><a href="https://www.spar.ie/">Spar</a>:</b> Spar is a Dutch supermarket. There are two Spar near the school, one on the campus and one at the main entrance at UL. The goods in Spar are few and expensive, so it suitable for buying some snacks and urgent items. For example, for a sandwich of the same weight, Spar sells for €2.99, while Lidl only sells for €1.99.
                                     </li>
                                     <li>
-                                        <b>Lidl:</b> Lidl is about 3 kilometres away from the school. It's not big, but the food is full and the price is cheap. I recommend coming here every week to buy vegetables and meat.
+                                        <b><a href="https://www.lidl.ie/">Lidl</a>:</b> Lidl is a German supermarket. It is about 3 kilometres away from the UL. It's not big, but the food is comprehensive and the price is cheap. I recommend coming here every week to buy vegetables and meat.
                                     </li>
                                     <li>
-                                        <b>ALDI:</b> ALDI is about 2 kilometres away from the school. It is similar to Lidl. You can choose one of them to buy food for every week.
+                                        <b><a href="https://www.aldi.ie/">ALDI</a>:</b> ALDI is also a German supermarket, and it is similar to Lidl, they all have cheap prices and comprehensive foods. It is about 2 kilometres away from the school.
                                     </li>
                                     <li>
-                                        <b>Tesco:</b> Tesco is in Limerick city centre, which is a large supermarket with many types of goods, but the price is more expensive than Lidl and ALDI. It can also be purchased online and delivered to your accommodation, which is very convenient.
+                                        <b><a href="https://www.tesco.ie/">Tesco</a>:</b> Tesco is a British supermarket. It is located in Limerick city centre, which is a large supermarket with many types of goods, but the price is a little more expensive than Lidl and ALDI. It can also be purchased online and deliver to your accommodation, which is very convenient.
                                     </li>
                                     <li>
-                                        <b>SuperValu:</b> SuperValu is near the Lidl, which also provides delivery service, but it is more expensive than Tesco. If Tesco is booked full, you can choose SuperValu.
+                                        <b><a href="https://supervalu.ie/">SuperValu</a>:</b> SuperValu is a supermarket chain in Ireland. It also provides delivery service, but it is more expensive than Tesco. For example, for almost identical muffins, Tesco has each of €0.95, while SuperValu has each of €2.5. In addition, I usually spent about €20 more to buy foods for a week in SuperValu than in Tesco.
                                     </li>
                                     <li>
                                         <b>Carnival Asia Supermarket:</b> It is a larger Asian supermarket in Limerick. Because the owner is Chinese, most of foods are from China. You can add the owners' WeChat when you go there first, and then just tell them what you need, they will deliver to your accommodation free.
+                                    </li>
+                                </ul>
+                                <p>
+                                    There are some famous shopping centres and supermarkets that I am not familiar with:
+                                </p>
+                                <ul>
+                                    <li>
+                                        <b><a href="http://www.parkwaysc.com/">Parkway</a>:</b> It is a shopping centre about 2.5km from UL. Usually, you will pass it when you take the 304 bus to the city centre. There is a supermarket called Dunnes in it.
+                                    </li>
+                                    <li>
+                                        <b>Cheong Heng Hong Oriental Supermarket:</b> It is the largest Chinese supermarket in Limerick and is located in the city centre. I have never been there to buy anything, but according to the online reviews, it has a complete range of things, especially Chinese and Korean food.
+                                    </li>
+                                    <li>
+                                        <b><a href="https://www.milkmarketlimerick.ie/">Milk Market</a>:</b> The milk market is located in the city center, which is only open on Friday, Saturday and Sunday. On Saturday, some farmers sell food from the farm.
                                     </li>
                                 </ul>
                             </div>
@@ -261,7 +346,7 @@
                         <div id="collapse-3-3" class="collapse" data-parent="#accordion-3">
                             <div class="card-body">
                                 <p>
-                                    No matter which student village you live in, it is always easy to take the bus to the city centre, usually take 304 or 307 route. For convenience and to save money, you can apply for Leap Card at Student Life, then you do not need to prepare coins every time you take the bus. Because the city centre is only 5 kilometres away from the school, cycling or even walking are also good choices
+                                    No matter which student village you live in, it is always easy to take the bus to the city centre, usually take 304 or 307 route. For convenience and to save money, you can apply for Leap Card at Student Life, then you do not need to prepare coins every time you take the bus. Because the city centre is only 5 kilometres away from the school, cycling or even walking are also good choices.
                                 </p>
                             </div>
                         </div>
@@ -281,9 +366,9 @@
                                         UL does not have a canteen like SDUT, but there are many restaurants and bars on campus.
                                     </li>
                                     <li>
-                                        <b>Does the dormitory have a washing machine?</b>
+                                        <b>Does the apartment have a washing machine?</b>
                                         <br>
-                                        Except for the 2 bedroom apartment, there are no washing machines in the other dormitories, but there are public washing machines in the village, usually near Reception.
+                                        Except for the 2 bedrooms apartment, there are no washing machines in the other apartment, but there are public washing machines in each village, usually near Reception.
                                     </li>
                                     <li>
                                         <b>Do I need to pay utility bills?</b>
@@ -299,6 +384,23 @@
                             </div>
                         </div>
                     </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="collapsed card-link text-dark" data-toggle="collapse" href="#collapse-3-5">
+                                <h2>My impression of Ireland</h2>
+                            </a>
+                        </div>
+                        <div id="collapse-3-5" class="collapse" data-parent="#accordion-3">
+                            <div class="card-body">
+                                <p>
+                                    This video introduces my first impression of Ireland and what I think of Ireland after living there one year.
+                                </p>
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/k2i_VB5b4JM" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="tab-pane fade" id="category-4" role="tabpanel" aria-labelledby="category-4-tab">
@@ -306,10 +408,41 @@
                     <div class="card">
                         <div class="card-header">
                             <a class="card-link text-dark" data-toggle="collapse" href="#collapse-4-1">
-                                <h2>Campus Accommodation</h2>
+                                <h2>Campus Introduce</h2>
                             </a>
                         </div>
                         <div id="collapse-4-1" class="collapse show" data-parent="#accordion-4">
+                            <div class="card-body">
+                                <p>
+                                    UL campus is located in the northeast of Limerick, which is 5 kilometres far away from the city centre. The campus is built on both sides of River Shannon, with many trees and lawns. It is a scenic campus. There is no gates and walls in campus, so cars and buses can enter and exit at will, which is different with SDUT.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="collapsed card-link text-dark" data-toggle="collapse" href="#collapse-4-2">
+                                <h2>Campus Tour</h2>
+                            </a>
+                        </div>
+                        <div id="collapse-4-2" class="collapse" data-parent="#accordion-4">
+                            <div class="card-body">
+                                <p>
+                                    This video introduces all the key buildings on the UL campus.
+                                </p>
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/1GDtWWpKISA" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="collapsed card-link text-dark" data-toggle="collapse" href="#collapse-4-3">
+                                <h2>Campus Accommodation</h2>
+                            </a>
+                        </div>
+                        <div id="collapse-4-3" class="collapse" data-parent="#accordion-4">
                             <div class="card-body">
                                 <ol>
                                     <li>
@@ -428,30 +561,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <a class="collapsed card-link text-dark" data-toggle="collapse" href="#collapse-4-2">
-                                <h2>Campus Map</h2>
-                            </a>
-                        </div>
-                        <div id="collapse-4-2" class="collapse" data-parent="#accordion-4">
-                            <div class="card-body">
-                                <p>
-                                    The picture below is the campus map, I will point out the locations of the five student villages.
-                                </p>
-                                <ul>
-                                    <li>Cappavilla: 38</li>
-                                    <li>Thomond: 39</li>
-                                    <li>Dromroe: 26</li>
-                                    <li>Plassey: 4</li>
-                                    <li>Kilmurry: 24</li>
-                                </ul>
-                                <img src="{% static 'images/campus-map.png' %}" class="img-fluid">
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
+        </div>
+        <div class="col-sm-3 nav flex-column nav-pills mt-sm-4" id="article-tab" role="tablist" aria-orientation="vertical">
+            <br>
+            <a href="https://www.ul.ie/international/sites/default/files/user_media/uploads/Campus_Map.pdf" class="btn btn-outline-success hidden-before" target="_blank">UL Campus Map</a>
+            <a href="https://www.ul.ie/international/sites/default/files/user_media/uploads/Top%20Tips%20for%20International%20Students.pdf" class="btn btn-outline-success mt-2 hidden-before" target="_blank">Top Tips for International Students</a>
+            <a href="https://www.ul.ie/international/sites/default/files/user_media/uploads/itd_student_quick_start_guide.pdf" class="btn btn-outline-success mt-2 hidden-before" target="_blank">ITD Student Guide</a>
         </div>
       </div>
     </div>

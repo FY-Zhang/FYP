@@ -1,0 +1,29 @@
+.container {
+    margin-top: 4px;
+    white-space: pre-line;
+}
+
+.title {
+    text-align: center;
+}
+
+.info {
+    text-align: center;
+    color: #757575;
+}
+
+.comment {
+    margin-top: -130px;
+}
+
+.comment-btn {
+    margin-top: -40px;
+}
+
+.comment_list {
+    margin-top: -200px;
+}
+
+.comment_list p {
+    margin-top: -20px;
+}
