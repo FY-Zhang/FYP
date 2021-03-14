@@ -33,10 +33,16 @@
                 </ul>
                 <!--登录/登出-->
                 <ul class="navbar-nav navbar-right mr-4 ml-md-4">
+                    <!--根据Cookie判断是否登录，登录就显示-->
+                   {% if cookie != '' %}
+                   <li class="nav-item mr-2">
+                       <a class="nav-link" href="{% url 'my_post' %}">My Post</a>
+                   </li>
+                   {% endif %}
                     <li class="nav-item">
                         <!--根据cookie判断是否登录，未登录就显示login，登录就显示头像-->
                         {% if cookie != '' %}
-                        <a class="nav-link" href="{% url 'logout' %}" >logout</a>
+                        <a class="nav-link" href="{% url 'logout' %}" >Logout</a>
                         {% else %}
                         <a class="nav-link" href="{% url 'login' %}" >Login</a>
                         {% endif %}
@@ -44,7 +50,6 @@
                 </ul>
             </div>
         </nav>
-
         <!--主体-->
         <div class="header">
             <h1>Login</h1>

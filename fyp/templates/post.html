@@ -34,10 +34,16 @@
                 </ul>
                 <!--登录/登出-->
                 <ul class="navbar-nav navbar-right mr-4 ml-md-4">
+                    <!--根据Cookie判断是否登录，登录就显示-->
+                   {% if cookie != '' %}
+                   <li class="nav-item mr-2">
+                       <a class="nav-link" href="{% url 'my_post' %}">My Post</a>
+                   </li>
+                   {% endif %}
                     <li class="nav-item">
                         <!--根据Cookie判断是否登录，未登录就显示Login，登录就显示头像-->
                         {% if cookie != '' %}
-                        <a class="nav-link" href="{% url 'logout' %}" >logout</a>
+                        <a class="nav-link" href="{% url 'logout' %}" >Logout</a>
                         {% else %}
                         <a class="nav-link" href="{% url 'login' %}" >Login</a>
                         {% endif %}
@@ -55,6 +61,46 @@
             <h2 class="title">{{post.post_title}}</h2>
             <p class="info"><b>User:</b> {{user.user_name}}&nbsp;&nbsp;&nbsp;<b>Topic:</b> {{post.post_topic}}&nbsp;&nbsp;&nbsp;<b>Time:</b> {{post.post_time}}</p>
             <p class="content">{{post.post_content}}</p>
+            <!--如果是登录者的帖子，就显示delete和edit按钮-->
+            {% if user.user_email == status %}
+            <div class="row">
+                <div class="col-sm-1 col-2">
+                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#edit">Edit</button>
+                </div>
+                <div class="col-2">
+                    <button type="button" class="btn btn-outline-danger ml-2" data-toggle="modal" data-target="#delete">Delete</button>
+                </div>
+            </div>
+            <!--Edit提示框-->
+            <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="editTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="editTitle">Edit this post</h5>
+                    </div>
+                    <div class="modal-body"><form action="" method="post">{% csrf_token %}<div class="form-group"><label for="postTitle">Title</label><input type="text" name="title" class="form-control" id="postTitle"></div><div class="form-group"><label for="postTopic">Topic</label><select class="form-control" name="topic" id="postTopic"><option>UL - Accommodation</option> <option>UL - Club</option> <option>UL - Course</option> <option>UL - Health</option> <option>UL - Life</option> <option>UL - Prepare</option> <option>UL - Others</option> <option>Limerick - Eating</option> <option>Limerick - Shopping</option> <option>Limerick - Travel</option> <option>Limerick - Others</option> <option>Ireland - City</option> <option>Ireland - Travel</option> <option>Ireland - Others</option></select></div><div class="form-group"><label for="postContent">Content</label><textarea class="form-control" name="content" id="postContent" rows="5"></textarea></div><button type="submit" class="btn btn-primary float-right" name="editBtn" value="edit">Submit</button></form></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <!--Delete提示框-->
+            <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="deleteTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="deleteTitle">Delete this post</h5>
+                    </div>
+                    <div class="modal-body">Do you want to delete this post? It cannot be unrecoverable after deletion.</div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                      <a href="{% url 'delete_post' %}?id={{post.id}}"><button type="button" class="btn btn-primary">Yes</button></a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            {% endif %}
             <h4>Comment</h4>
             <!--根据Cookie判断是否登录，登录就显示发表评论-->
             {% if cookie != '' %}
@@ -63,7 +109,7 @@
                 <div class="form-group">
                     <textarea class="form-control" name="comment" id="postComment" rows="5"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary float-right comment-btn">Submit</button>
+                <button type="submit" class="btn btn-primary float-right comment-btn" name="commentBtn" value="comment">Submit</button>
             </form>
             {% endif %}
             <!--显示评论-->

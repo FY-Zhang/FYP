@@ -34,10 +34,16 @@
                 </ul>
                 <!--登录/登出-->
                <ul class="navbar-nav navbar-right mr-4 ml-md-4">
+                   <!--根据Cookie判断是否登录，登录就显示-->
+                   {% if cookie != '' %}
+                   <li class="nav-item mr-2">
+                       <a class="nav-link" href="{% url 'my_post' %}">My Post</a>
+                   </li>
+                   {% endif %}
                     <li class="nav-item">
                         <!--根据Cookie判断是否登录，未登录就显示Login，登录就显示头像-->
                         {% if cookie != '' %}
-                        <a class="nav-link" href="{% url 'logout' %}" >logout</a>
+                        <a class="nav-link" href="{% url 'logout' %}" >Logout</a>
                         {% else %}
                         <a class="nav-link" href="{% url 'login' %}" >Login</a>
                         {% endif %}
@@ -60,9 +66,20 @@
                 <div class="form-group">
                     <label for="postTopic">Topic</label>
                     <select class="form-control" name="topic" id="postTopic">
-                        <option>University Life</option>
-                        <option>Limerick</option>
-                        <option>Ireland</option>
+                        <option>UL - Accommodation</option>
+                        <option>UL - Club</option>
+                        <option>UL - Course</option>
+                        <option>UL - Health</option>
+                        <option>UL - Life</option>
+                        <option>UL - Prepare</option>
+                        <option>UL - Others</option>
+                        <option>Limerick - Eating</option>
+                        <option>Limerick - Shopping</option>
+                        <option>Limerick - Travel</option>
+                        <option>Limerick - Others</option>
+                        <option>Ireland - City</option>
+                        <option>Ireland - Travel</option>
+                        <option>Ireland - Others</option>
                     </select>
                 </div>
                 <div class="form-group">
