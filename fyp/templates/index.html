@@ -34,22 +34,17 @@
       </button>
       <div class="collapse navbar-collapse" id="navbar">
         <!--导航按钮-->
-        <ul class="navbar-nav mr-auto ml-md-4">
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'index' %}">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'photos' %}">Photos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'forum' %}">Forum</a>
-          </li>
+        <ul class="navbar-nav mr-auto ml-md-4 my-2">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'photos' %}">Photos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'forum' %}">Forum</a>
+            </li>
         </ul>
-        <!--搜索-->
-        <form class="form-inline my-2">
-          <input class="form-control mr-2 col-6 col-md-8" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-0" type="submit">Search</button>
-        </form>
       </div>
     </nav>
 
@@ -69,31 +64,22 @@
       <!--图片-->
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <a href="#">
             <div id="img_1"></div>
             <div class="carousel-caption d-block">
-              <h4>Thomond Village</h4>
-              <p>This is the first article.</p>
+              <h4>UL Library</h4>
             </div>
-          </a>
         </div>
         <div class="carousel-item">
-          <a href="#">
             <div id="img_2"></div>
             <div class="carousel-caption d-block">
-              <h4>Cappavilla Village</h4>
-              <p>This is the second article.</p>
+              <h4>Computer Science Building</h4>
             </div>
-          </a>
         </div>
         <div class="carousel-item">
-          <a href="#">
             <div id="img_3"></div>
             <div class="carousel-caption d-block">
-              <h4>Dromroe Village</h4>
-              <p>This is the third article.</p>
+              <h4>Cappavilla Village</h4>
             </div>
-          </a>
         </div>
       </div>
       <!--左右切换按钮-->
@@ -113,6 +99,7 @@
             <a class="nav-link" id="category-2-tab" data-toggle="pill" href="#category-2" role="tab" aria-controls="category-2" aria-selected="false">After You Arrive</a>
             <a class="nav-link" id="category-3-tab" data-toggle="pill" href="#category-3" role="tab" aria-controls="category-3" aria-selected="false">Life in Ireland</a>
             <a class="nav-link" id="category-4-tab" data-toggle="pill" href="#category-4" role="tab" aria-controls="category-4" aria-selected="false">UL Campus</a>
+            <a class="nav-link" id="category-5-tab" data-toggle="pill" href="#category-5" role="tab" aria-controls="category-5" aria-selected="false">About UL</a>
             <br>
             <br>
             <a href="https://www.ul.ie/international/sites/default/files/user_media/uploads/Campus_Map.pdf" class="btn btn-outline-success hidden-after" target="_blank">UL Campus Map</a>
@@ -556,6 +543,181 @@
                                         <img src="{% static 'images/Kilmurry.jpg' %}" class="img-fluid">
                                         <img src="{% static 'images/K-LivingRoom.jpg' %}" class="img-fluid">
                                         <img src="{% static 'images/K-BedRoom.jpg' %}" class="img-fluid">
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="category-5" role="tabpanel" aria-labelledby="category-5-tab">
+                <div id="accordion-5">
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="card-link text-dark" data-toggle="collapse" href="#collapse-5-1">
+                                <h2>The total cost in a year</h2>
+                            </a>
+                        </div>
+                        <div id="collapse-5-1" class="collapse show" data-parent="#accordion-5">
+                            <div class="card-body">
+                                <p>
+                                    The following table is the data about the estimated cost of living in UL for one year, which is from the UL <a href="https://www.ul.ie/international/undergraduate-postgraduate-studies/current-students/living-ireland">official website</a>.
+                                </p>
+                                <img src="{% static 'images/Total Cost.png' %}" class="img-fluid">
+                                <p>
+                                    According to my experience living in Ireland, the estimated price on this table is accurate. However, if you want to save money, the cost can be much lower than it.
+                                </p>
+                                <p>
+                                    The first is accommodation. The cheapest accommodation on campus is €4,387.50, while it is cheaper to live off campus, some only cost €3000. The second is food. Cooking by yourself is the most economical, it costs about €40-60 per week to buy materials from the market. If you buy the airfare in advance, the price of one can be as low as €400. As for the cost of clothes, it is not necessary, so the budget is up to €300. Based on the estimated cost above, living in Ireland just need to cost €8,500 for a year.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="collapsed card-link text-dark" data-toggle="collapse" href="#collapse-5-2">
+                                <h2>BSc Computer System</h2>
+                            </a>
+                        </div>
+                        <div id="collapse-5-2" class="collapse" data-parent="#accordion-5">
+                            <div class="card-body">
+                                <p>
+                                    When you go to UL, the major you learn is Computer System. Although the name is a little different, the content of the module is similar.
+                                </p>
+                                <p>
+                                    The course in UL is divided into lecture, tutorial and lab. The lecture is a formal class. The tutorial is also a class, but it will talk about some exercises. The lab is the teacher assigns tasks, and then the students complete them by themselves. Almost all courses have these three, but some courses do not have lab.
+                                </p>
+                                <p>
+                                    Regarding courses, 3+1+1 students can choose their own courses, while courses of 2+2 are arranged by the school, so here is a table to show two-year courses for 2+2 students.
+                                </p>
+                                <table class="table">
+                                    <thead class="thead-dark">
+                                        <tr scope='col'>
+                                            <th>Year 3 - Semester 1</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>CS4004 - Software Testing and Inspection</td>
+                                        </tr>
+                                        <tr>
+                                            <td>CS4178 - Software Requirements and Modelling</td>
+                                        </tr>
+                                        <tr>
+                                            <td>CS4187 - Professional Issues in Computing</td>
+                                        </tr>
+                                        <tr>
+                                            <td>CS4416 - Database System</td>
+                                        </tr>
+                                        <tr>
+                                            <td>CS4457 - Project Management and Practice</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="table">
+                                    <thead class="thead-dark">
+                                        <tr scope='col'>
+                                            <th>Year 3 - Semester 2</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>CS4084 - Mobile Application Development</td>
+                                        </tr>
+                                        <tr>
+                                            <td>CS4106 - Machine Learning: Methods and Application</td>
+                                        </tr>
+                                        <tr>
+                                            <td>CS4116 - Software Development Project</td>
+                                        </tr>
+                                        <tr>
+                                            <td>CS4815 - Computer Graphics</td>
+                                        </tr>
+                                        <tr>
+                                            <td>MA4413 - Statistics for Computing</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="table">
+                                    <thead class="thead-dark">
+                                        <tr scope='col'>
+                                            <th>Year 4 - Semester 1</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>CS4011 Advanced Programming Concepts and Practices</td>
+                                        </tr>
+                                        <tr>
+                                            <td>CS4125 - Systems Analysis and Design</td>
+                                        </tr>
+                                        <tr>
+                                            <td>CS4287 - Neural Computing</td>
+                                        </tr>
+                                        <tr>
+                                            <td>CS4337 - Big Data Management and Security</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="table">
+                                    <thead class="thead-dark">
+                                        <tr scope='col'>
+                                            <th>Year 4 - Semester 2</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>CS4158 - Software Design and Architecture</td>
+                                        </tr>
+                                        <tr>
+                                            <td>CS4168 - Data Mining</td>
+                                        </tr>
+                                        <tr>
+                                            <td>CS4227 - Software Design and Architecture</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="collapsed card-link text-dark" data-toggle="collapse" href="#collapse-5-3">
+                                <h2>Why choose UL</h2>
+                            </a>
+                        </div>
+                        <div id="collapse-5-3" class="collapse" data-parent="#accordion-5">
+                            <div class="card-body">
+                                <ol>
+                                    <li>
+                                        <b>Good Education</b>
+                                        <p>
+                                            UL is ranked 500 in the world.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Get the Jobs</b>
+                                        <p>
+                                            UL graduate employment rate is consistently higher than the national average.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Top-class Sports Facility</b>
+                                        <p>
+                                            There are over 60 acres of outdoor pitches in UL, and the indoor facility is top-class. The arena has a gym and a competition-level swimming pool.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>On-campus Accommodation</b>
+                                        <p>
+                                            There are six student villages on the campus and providing more than 2500 rooms. Students can live on campus when they come to Ireland firstly.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <b>Low Economic Pressure</b>
+                                        <p>
+                                            Limerick is one of the most affordable cities in Ireland for student living.
+                                        </p>
                                     </li>
                                 </ol>
                             </div>

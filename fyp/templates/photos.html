@@ -26,22 +26,17 @@
     </button>
     <div class="collapse navbar-collapse" id="navbar">
       <!--导航按钮-->
-      <ul class="navbar-nav mr-auto ml-md-4">
+      <ul class="navbar-nav mr-auto ml-md-4 my-2">
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'index' %}">Home</a>
+            <a class="nav-link" href="{% url 'index' %}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'photos' %}">Photos</a>
+            <a class="nav-link" href="{% url 'photos' %}">Photos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'forum' %}">Forum</a>
+            <a class="nav-link" href="{% url 'forum' %}">Forum</a>
         </li>
-      </ul>
-      <!--搜索-->
-      <form class="form-inline my-2">
-        <input class="form-control mr-2 col-6 col-md-8" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-0" type="submit">Search</button>
-      </form>
+    </ul>
     </div>
   </nav>
 
@@ -49,16 +44,7 @@
   <div class="header">
     <h1>Photos</h1>
   </div>
-  <div class="mt-2 ml-4 mr-4">
-    <div id="accordion-1">
-      <div class="card">
-        <div class="card-header">
-          <a class="card-link text-dark" data-toggle="collapse" href="#collapse-1-1">
             <h2 class="category">University of Limerick</h2>
-          </a>
-        </div>
-        <div id="collapse-1-1" class="collapse show" data-parent="#accordion-1">
-          <div class="card-body">
             <div class="row masonry">
               <div class="col-lg-3 col-md-6 mt-2 item">
                 <img src="{% static 'images/Campus-13.jpg' %}" class="img-fluid">
@@ -153,16 +139,7 @@
                 <p class="remark">Plassey Village</p>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <a class="collapsed card-link text-dark" data-toggle="collapse" href="#collapse-1-2">
-              <h2 class="category">Limerick City</h2>
-            </a>
-          </div>
-          <div id="collapse-1-2" class="collapse" data-parent="#accordion-1">
-            <div class="card-body">
+          <h2 class="category">Limerick City</h2>
               <div class="row masonry">
                 <div class="col-lg-3 col-md-6 mt-2 item">
                   <img src="{% static 'images/Limerick-1.jpg' %}" class="img-fluid">
@@ -237,9 +214,6 @@
                   <p class="remark">City Centre</p>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
         <script>
           $('.masonry').masonry({
             itemSelector: '.item',

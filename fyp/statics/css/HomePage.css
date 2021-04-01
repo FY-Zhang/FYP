@@ -3,7 +3,7 @@
 }
 
 #img_1 {
-    background: url(../images/sample1.png) no-repeat center;
+    background: url(../images/Library-1.jpg) no-repeat center;
     width: 98%;
     height: 500px;
     border-radius: 30px;
@@ -12,7 +12,7 @@
     left: 0;
 }
 #img_2 {
-    background: url(../images/sample2.png) no-repeat center;
+    background: url(../images/Computer-Science-Building.png) no-repeat center;
     width: 98%;
     height: 500px;
     border-radius: 30px;
@@ -21,7 +21,7 @@
     left: 0;
 }
 #img_3 {
-    background: url(../images/sample3.png) no-repeat center;
+    background: url(../images/sample2.png) no-repeat center;
     width: 98%;
     height: 500px;
     border-radius: 30px;

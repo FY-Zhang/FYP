@@ -56,8 +56,35 @@
         <div class="header">
             <h1>Forum</h1>
         </div>
-
         <div class="container">
+            <div class="filter">
+                <form class="comment mt-4 mb-2" action="" method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <select class="form-control col-sm-4" name="topic" id="postFilter">
+                            <option>Topic</option>
+                            <option>UL - Accommodation</option>
+                            <option>UL - Club</option>
+                            <option>UL - Course</option>
+                            <option>UL - Health</option>
+                            <option>UL - Life</option>
+                            <option>UL - Prepare</option>
+                            <option>UL - Others</option>
+                            <option>Limerick - Eating</option>
+                            <option>Limerick - Shopping</option>
+                            <option>Limerick - Travel</option>
+                            <option>Limerick - Others</option>
+                            <option>Ireland - City</option>
+                            <option>Ireland - Travel</option>
+                            <option>Ireland - Others</option>
+                        </select>
+                        <div class="col-sm-1"></div>
+                        <input type="text" name="search" class="form-control col-sm-4" id="postSearch" placeholder="Search">
+                        <div class="col-sm-1"></div>
+                        <button type="submit" class="btn btn-primary float-right comment-btn col-sm-2" name="commentBtn" value="comment">Submit</button>
+                    </div>
+                </form>
+            </div>
             <!--发帖-->
             {% if cookie != '' %}
             <a href="{% url 'send_post' %}">
