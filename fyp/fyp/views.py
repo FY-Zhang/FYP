@@ -20,8 +20,11 @@ def login(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
         # 判断数据库中是否有对应的账号密码
-        user = models.User.objects.get(user_email=email)
-        ret = check_password(password, user.user_password)
+        users = models.User.objects.filter(user_email=email)
+        user_password = ''
+        for user in users:
+            user_password = user.password
+        ret = check_password(password, user_password)
         if ret:
             rep = redirect('/forum')
             rep.set_cookie("is_login", email)
