@@ -23,7 +23,7 @@ def login(request):
         users = models.User.objects.filter(user_email=email)
         user_password = ''
         for user in users:
-            user_password = user.password
+            user_password = user.user_password
         ret = check_password(password, user_password)
         if ret:
             rep = redirect('/forum')
