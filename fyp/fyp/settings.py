@@ -139,5 +139,5 @@ CSRF_COOKIE_HTTPONLY = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'statics'),s
+    os.path.join(BASE_DIR, 'statics'),
 ]

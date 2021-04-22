@@ -5,7 +5,7 @@ from django.db import models
 class User(models.Model):
     user_email = models.CharField(max_length=50)
     user_name = models.CharField(max_length=50)
-    user_password = models.CharField(max_length=50)
+    user_password = models.CharField(max_length=200)
     user_type = models.IntegerField(default=0)  #默认普通用户，1是管理员
 
 class Post(models.Model):

@@ -120,9 +120,8 @@ def post(request):
         # 修改帖子
         elif request.POST.get('editBtn') == 'edit':
             title = request.POST.get('title')
-            topic = request.POST.get('topic')
             content = request.POST.get('content')
-            models.Post.objects.filter(id=id).update(post_title=title, post_topic=topic, post_content=content, user_email=status)
+            models.Post.objects.filter(id=id).update(post_title=title, post_content=content, user_email=status)
             return redirect('/post?id='+str(id))
     # 读取评论
     post_comments = models.Post_Comment.objects.filter(post_id=id).order_by('-id')   # 倒序取数据
